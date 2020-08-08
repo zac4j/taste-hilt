@@ -14,15 +14,20 @@
  * limitations under the License.
  */
 
-package com.example.android.hilt.data
-
-import androidx.room.Database
-import androidx.room.RoomDatabase
+package cn.zacash.android.hilt.navigator
 
 /**
- * SQLite Database for storing the logs.
+ * Available screens.
  */
-@Database(entities = arrayOf(Log::class), version = 1, exportSchema = false)
-abstract class AppDatabase : RoomDatabase() {
-    abstract fun logDao(): LogDao
+enum class Screens {
+    BUTTONS,
+    LOGS
+}
+
+/**
+ * Interfaces that defines an app navigator.
+ */
+interface AppNavigator {
+    // Navigate to a given screen.
+    fun navigateTo(screen: Screens)
 }

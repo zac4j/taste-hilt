@@ -21,17 +21,17 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "com.example.android.hilt"
+        applicationId "cn.zacash.android.hilt"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        testInstrumentationRunner 'cn.zacash.android.hilt.CustomTestRunner'
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -49,7 +49,7 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
@@ -67,4 +67,8 @@ dependencies {
     // Hilt dependencies
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    // Hilt testing dependency
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    // Make Hilt generate code in the androidTest folder
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 }

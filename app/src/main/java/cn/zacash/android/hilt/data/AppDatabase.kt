@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package com.example.android.hilt
+package cn.zacash.android.hilt.data
 
-import android.app.Application
+import androidx.room.Database
+import androidx.room.RoomDatabase
 
-class LogApplication : Application() {
-
-    lateinit var serviceLocator: ServiceLocator
-
-    override fun onCreate() {
-        super.onCreate()
-        serviceLocator = ServiceLocator(applicationContext)
-    }
+/**
+ * SQLite Database for storing the logs.
+ */
+@Database(entities = [Log::class], version = 1, exportSchema = false)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun logDao(): LogDao
 }

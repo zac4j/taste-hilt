@@ -14,20 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.android.hilt.navigator
+package cn.zacash.android.hilt
 
-/**
- * Available screens.
- */
-enum class Screens {
-    BUTTONS,
-    LOGS
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-/**
- * Interfaces that defines an app navigator.
- */
-interface AppNavigator {
-    // Navigate to a given screen.
-    fun navigateTo(screen: Screens)
-}
+@HiltAndroidApp
+class LogApplication : Application()

@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.android.hilt
+package cn.zacash.android.hilt
 
 import android.content.Context
 import androidx.fragment.app.FragmentActivity
 import androidx.room.Room
-import com.example.android.hilt.data.AppDatabase
-import com.example.android.hilt.data.LoggerLocalDataSource
-import com.example.android.hilt.navigator.AppNavigator
-import com.example.android.hilt.navigator.AppNavigatorImpl
-import com.example.android.hilt.util.DateFormatter
+import cn.zacash.android.hilt.data.AppDatabase
+import cn.zacash.android.hilt.data.LoggerLocalDataSource
+import cn.zacash.android.hilt.navigator.AppNavigator
+import cn.zacash.android.hilt.navigator.AppNavigatorImpl
+import cn.zacash.android.hilt.util.DateFormatter
 
 class ServiceLocator(applicationContext: Context) {
 

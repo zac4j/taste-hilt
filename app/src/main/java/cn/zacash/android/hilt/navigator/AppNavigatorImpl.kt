@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package com.example.android.hilt.navigator
+package cn.zacash.android.hilt.navigator
 
 import androidx.fragment.app.FragmentActivity
-import com.example.android.hilt.R
-import com.example.android.hilt.ui.ButtonsFragment
-import com.example.android.hilt.ui.LogsFragment
+import cn.zacash.android.hilt.R
+import cn.zacash.android.hilt.ui.ButtonsFragment
+import cn.zacash.android.hilt.ui.LogsFragment
+import javax.inject.Inject
 
 /**
  * Navigator implementation.
  */
-class AppNavigatorImpl(private val activity: FragmentActivity) : AppNavigator {
+class AppNavigatorImpl @Inject constructor(private val activity: FragmentActivity) :
+    AppNavigator {
 
     override fun navigateTo(screen: Screens) {
         val fragment = when (screen) {

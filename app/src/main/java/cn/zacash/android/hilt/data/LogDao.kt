@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.hilt.data
+package cn.zacash.android.hilt.data
 
 import androidx.room.Dao
 import androidx.room.Insert
