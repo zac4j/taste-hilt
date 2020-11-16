@@ -33,6 +33,9 @@ class ServiceLocator(applicationContext: Context) {
         "logging.db"
     ).build()
 
+    /**
+     * Scoping an instance to a container.
+     */
     val loggerLocalDataSource = LoggerLocalDataSource(logsDatabase.logDao())
 
     fun provideDateFormatter() = DateFormatter()
